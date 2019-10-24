@@ -17,8 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
 
-    double weight, height, bmi;
-    String tmpS;
+    double weight, height;
 
     EditText HeightField;
     EditText WeightField;
