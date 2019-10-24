@@ -32,15 +32,19 @@ public class MainActivity extends AppCompatActivity {
         HeightField = (EditText) findViewById(R.id.height);
         WeightField = (EditText) findViewById(R.id.weight);
         OkButton = (Button) findViewById(R.id.myButton);
+
         OkButton.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
+                                            try {
+                                                height = Double.valueOf(HeightField.getText().toString());
+                                                weight = Double.valueOf(WeightField.getText().toString());
+                                                showToast(Double.toString(weight / (height * height)));
+                                            }catch(Exception e){
+                                                showToast("sth went wrong");
+                                            }
 
-                                            height = Double.valueOf(HeightField.getText().toString());
-                                            weight = Double.valueOf(WeightField.getText().toString());
 
-
-                                            showToast(Double.toString(weight / (height * height)));
                                         }
                                     }
         );
